@@ -1,0 +1,15 @@
+- No script  servlets_generate_graphs, substituir o formato de todos os loops:
+  De: for ((i=0; i < $1; i++))
+  Por: for i in `seq 1 $1`
+
+- No build.xml da raiz do projeto, target 'emulator', apontar para o target
+  'emulator' do build.xml em ./Client
+
+- Na maquina client, para evitar erros nos scripts de monitoramento e coleta:
+  $ sudo apt-get install gnuplot gawk
+
+- Em todos os scripts awk, corrigir o caminho do awk (No Ubuntu eh /usr/bin/awk)
+
+- No rubis.properties em ./Client, alterar os parametros do comando sar
+  em monitoring_options para -rubw (no original Ãeh -rubcw, q nao funciona no
+  Ubuntu 12.04)
