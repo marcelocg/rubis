@@ -16,7 +16,8 @@
 
   <!-- compile rule: Compile the beans and the servlets -->
   <target name="compile" depends="init">
-    <javac srcdir="${src}"
+    <javac includeantruntime="false"
+           srcdir="${src}"
 	   includes="edu/rice/rubis/client/**/*.java"
 	   destdir="${build}/RUBiS-${version}"
 	   classpath="${build.classpath}"

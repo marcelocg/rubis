@@ -1,10 +1,10 @@
 #!/bin/sh
 
 
-for i in 200* ; do
+for i in 20* ; do
+  echo $i/
   if [ -d "$i"/ ]; then
     # Generate data files
-    echo $i/
     gunzip $i"/db_server.gz"
     gunzip $i"/web_server.gz"
     gunzip $i"/servlets_server.gz"

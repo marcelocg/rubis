@@ -8,8 +8,19 @@
 - Na maquina client, para evitar erros nos scripts de monitoramento e coleta:
   $ sudo apt-get install gnuplot gawk
 
+- No rubis.properties em ./Client, alterar os parametros do comando sar
+  em monitoring_options para -rubw (no original eh -rubcw, q nao funciona no
+  Ubuntu 12.04)
+
+- No script generate_cpu_avg.sh, corrigir o for que itera sobre os diretorios dos
+  testes, identificados pela data de execucao. O for considera que o ano eh menor
+  que 2010, usando a mascara 200* (todos os diretorios comecados com 200(dois mil
+  e alguma coisa)). Alterar para 20*, considerando assim os anos superiores a 2010,
+  como eh o caso do ano corrente (2013)
+
 - Em todos os scripts awk, corrigir o caminho do awk (No Ubuntu eh /usr/bin/awk)
 
-- No rubis.properties em ./Client, alterar os parametros do comando sar
-  em monitoring_options para -rubw (no original Ãeh -rubcw, q nao funciona no
-  Ubuntu 12.04)
+- No build.xml do diretorio Client, na tag <javac ...> do target compile, incluir
+  um atributo includeantruntime="false" para eliminar mensagens de warning do ant
+
+

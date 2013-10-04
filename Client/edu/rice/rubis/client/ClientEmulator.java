@@ -1256,7 +1256,7 @@ public class ClientEmulator
         System.out.println(
           "An error occured while waiting for remote processes termination ("
             + e.getMessage()
-            + ")");
+            + ")<br>\n");
       }
 
       // Time to transfer (scp all the files over)
@@ -1569,12 +1569,6 @@ public class ClientEmulator
           "nbscript="
             + Integer.toString(client.rubis.getRemoteClients().size() + 1);
         cmd[5] = reportDir + "stat_client0.html";
-
-System.out.println("Linha de comando do script awk:");
-for(int i=0;i<=5; i++){
-   System.out.print(cmd[i]);
-}
-System.out.println();
 
         Process computeStats = Runtime.getRuntime().exec(cmd);
         computeStats.waitFor();
